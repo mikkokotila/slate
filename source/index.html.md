@@ -57,7 +57,7 @@ The simplest way is to get the latest well tested version is to install with pip
 <code>pip install git+https://github.com/autonomio/core-module.git</code>
 
 
-# Models
+# Training aNeural Network
 
 > A typical use of the training function for - you guessed it - training a neural network.
 
