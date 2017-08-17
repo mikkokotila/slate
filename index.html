@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+    <title>Autonomio Deep Learning Workbench User Manual</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;python&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -211,10 +211,7 @@
     <div class="toc-wrapper">
       <img src="images/logo.png" class="logo" alt="Logo" />
         <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
               <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -225,277 +222,720 @@
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
           </li>
           <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+            <a href="#1-minute-pipepline" class="toc-h1 toc-link" data-title="1-Minute Pipepline">1-Minute Pipepline</a>
           </li>
           <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#installation" class="toc-h1 toc-link" data-title="Installation">Installation</a>
+          </li>
+          <li>
+            <a href="#training-aneural-network" class="toc-h1 toc-link" data-title="Training aNeural Network">Training aNeural Network</a>
+          </li>
+          <li>
+            <a href="#commands" class="toc-h1 toc-link" data-title="Commands">Commands</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Kittens">Get All Kittens</a>
+                    <a href="#train" class="toc-h2 toc-link" data-title="Commands">Train</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Kittens">Get a Specific Kitten</a>
+                    <a href="#predictor" class="toc-h2 toc-link" data-title="Commands">Predictor</a>
                   </li>
                   <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Kittens">Delete a Specific Kitten</a>
+                    <a href="#wrangler" class="toc-h2 toc-link" data-title="Commands">Wrangler</a>
+                  </li>
+                  <li>
+                    <a href="#data" class="toc-h2 toc-link" data-title="Commands">Data</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+            <a href="#examples" class="toc-h1 toc-link" data-title="Examples">Examples</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#prepare-and-train" class="toc-h2 toc-link" data-title="Examples">Prepare and Train</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#shapes" class="toc-h1 toc-link" data-title="Shapes">Shapes</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#funnel" class="toc-h2 toc-link" data-title="Shapes">Funnel</a>
+                  </li>
+                  <li>
+                    <a href="#long-funnel" class="toc-h2 toc-link" data-title="Shapes">Long Funnel</a>
+                  </li>
+                  <li>
+                    <a href="#rhombus" class="toc-h2 toc-link" data-title="Shapes">Rhombus</a>
+                  </li>
+                  <li>
+                    <a href="#diamond" class="toc-h2 toc-link" data-title="Shapes">Diamond</a>
+                  </li>
+                  <li>
+                    <a href="#hexagon" class="toc-h2 toc-link" data-title="Shapes">Hexagon</a>
+                  </li>
+                  <li>
+                    <a href="#brick" class="toc-h2 toc-link" data-title="Shapes">Brick</a>
+                  </li>
+                  <li>
+                    <a href="#triangle" class="toc-h2 toc-link" data-title="Shapes">Triangle</a>
+                  </li>
+                  <li>
+                    <a href="#stairs" class="toc-h2 toc-link" data-title="Shapes">Stairs</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#language-processing" class="toc-h1 toc-link" data-title="Language Processing">Language Processing</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#unstructed-data" class="toc-h2 toc-link" data-title="Language Processing">Unstructed Data</a>
+                  </li>
+                  <li>
+                    <a href="#word-vectorization" class="toc-h2 toc-link" data-title="Language Processing">Word Vectorization</a>
+                  </li>
+              </ul>
           </li>
       </div>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
+            <li><a href='https://github.com/autonomio/core-module'>Autonomio on Github</a></li>
+            <li><a href='https://github.com/autonomio/core-module#fork-destination-box'>For Autonomio</a></li>
+            <li><a href='http://autonom.io'>Autonomio Website</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+<p>Autonomio provides a high-level abstraction layer to building, configuring and optimizing neural networks and then using the trained models to make predictions in any environment. Unlike with other similar solutions, there is no need for signing up, API keys, cloud instances, or GPUs, and you have 100% control over the model. A typical installation takes a minute, and training a model not more than few minutes including data transformation from raw dataset with even thousands of columns, open text, and unstructured labels. Nothing is pre-trained, and only you have access to your data and predictions. There is no commercial entity behind Autonomio, but a non-profit research Foundation.</p>
 
-<p>We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
-
-<p>This example API documentation page was created with <a href="https://github.com/tripit/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
-<h1 id='authentication'>Authentication</h1>
+<p>This document covers the functionality of Autonomio. If you&#39;re looking for a high level overview of the capabilities, you might find the <a href="http://autonom.io">Autonomio website</a> more useful. </p>
+<h1 id='1-minute-pipepline'>1-Minute Pipepline</h1>
 <blockquote>
-<p>To authorize, use this code:</p>
+<p>To train a model use this code</p>
 </blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<pre class="highlight python tab-python"><code><span class="c"># do the python imports </span>
+<span class="kn">from</span> <span class="nn">autonomio.commands</span> <span class="kn">import</span> <span class="n">data</span><span class="p">,</span> <span class="n">wrangler</span><span class="p">,</span> <span class="n">train</span><span class="p">,</span> <span class="n">predictor</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<span class="c"># import the data from csv</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="p">(</span><span class="s">'medicare_10k.csv'</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s">'file'</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
+<span class="c"># preprocess the data</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">wrangler</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="s">'z'</span><span class="p">)</span>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
+<span class="c"># train a neural net</span>
+<span class="n">train</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">17</span><span class="p">],</span><span class="s">'z'</span><span class="p">,</span><span class="n">df</span><span class="p">,</span><span class="n">epoch</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">loss</span><span class="o">=</span><span class="s">'logcosh'</span><span class="p">,</span><span class="n">flatten</span><span class="o">=</span><span class="s">'median'</span><span class="p">)</span>
 </code></pre>
 <blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
+<p>NOTE: list of column index can be used with 3 or more columns. Using two integers will be considered a range of columns.</p>
 </blockquote>
 
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
-
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code>Authorization: meowmeowmeow</code></p>
+<p>Autonomio is very easy to use and it&#39;s very easy to memorize the namespace which is just 4 commands and less than 40 arguments combined. Namespace memorization is one of the key differences between advanced and beginner users. Whereas Autonomio helps lower skill level practitioners to dramatically improve their capability, advanced practitioners enjoy significant productivity gains and headache reduction.</p>
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must replace <code>medicare_10k.csv</code> with your own dataset.
 </aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h1 id='installation'>Installation</h1>
+<p>The simplest way is to get the latest well tested version is to install with pip from the repo directly. This way you get the latest well tested version, with the latest features. </p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
-</code></pre>
+<p><code>pip install git+https://github.com/autonomio/core-module.git</code></p>
+<h1 id='training-aneural-network'>Training aNeural Network</h1>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>A typical use of the training function for - you guessed it - training a neural network. </p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
+<pre class="highlight python tab-python"><code>
+<span class="n">train</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">25</span><span class="p">],</span><span class="s">'Survived'</span><span class="p">,</span><span class="n">df</span><span class="p">,</span>
+                        <span class="n">flatten</span><span class="o">=</span><span class="s">'none'</span><span class="p">,</span>
+                        <span class="n">epoch</span><span class="o">=</span><span class="mi">250</span><span class="p">,</span>
+                        <span class="n">dropout</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                        <span class="n">batch_size</span><span class="o">=</span><span class="n">batch</span><span class="p">,</span>
+                        <span class="n">loss</span><span class="o">=</span><span class="s">'logcosh'</span><span class="p">,</span>
+                        <span class="n">activation</span><span class="o">=</span><span class="s">'elu'</span><span class="p">,</span>
+                        <span class="n">layers</span><span class="o">=</span><span class="n">layer</span><span class="p">,</span>
+                        <span class="n">shape</span><span class="o">=</span><span class="n">shape</span><span class="p">,</span>
+                        <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</code></pre>
+<p>Autonomio provides a very high level abstraction layer to Multilayer Percepton Neural Network with comprehensive customization of neural net from a single line command. </p>
+<h1 id='commands'>Commands</h1><h2 id='train'>Train</h2>
+<ul>
+<li>loss</li>
+<li>optimization</li>
+<li>activation </li>
+<li>shape</li>
+<li>layers (even thousands of layers)</li>
+<li>dropout rate</li>
+<li>batch_size</li>
+</ul>
+<h3 id='data-ingestion'>Data Ingestion</h3>
+<p>Compared to TensorFlow, Keras, scikit learn and other common libraries, Autonomio provides a highly convinient data ingestion function. </p>
+
+<ul>
+<li>Automatically through train()</li>
+<li>Configured throgh train()</li>
+<li>Using the wrangler() utility</li>
+</ul>
+<pre class="highlight python tab-python"><code><span class="c"># a single column where data is string</span>
+<span class="n">train</span><span class="p">(</span><span class="s">'text'</span> <span class="p">,</span><span class="s">'neg'</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span> 
+
+<span class="c"># a single column by index</span>
+<span class="n">train</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s">'neg'</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span> 
+
+<span class="c"># a single column by label</span>
+<span class="n">train</span><span class="p">([</span><span class="s">'quality_score'</span><span class="p">],</span> <span class="s">'neg'</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span> 
+
+<span class="c"># a range of column index</span>
+<span class="n">train</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="s">'neg'</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span> 
+
+<span class="c"># set of column labels</span>
+<span class="n">train</span><span class="p">([</span><span class="s">'quality_score'</span><span class="p">,</span> <span class="s">'reach_score'</span><span class="p">],</span> <span class="s">'neg'</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span> 
+
+<span class="c"># a list of column index</span>
+<span class="n">train</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">18</span><span class="p">],</span> <span class="s">'neg'</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span> 
+</code></pre>
+<p>Data can be inputted from a dataframe, or csv, txt, json or msgpack files. All common transformations take place automatically within the train() command.</p>
+
+<ul>
+<li>automatic transformation of dependent variables
+
+<ul>
+<li>from text to word vectors
+
+<ul>
+<li>from text labels to integers </li>
+</ul></li>
+</ul></li>
+<li>automatic transformation of outcome variable
+
+<ul>
+<li>from continuous to categorical
+
+<ul>
+<li>based on mean</li>
+<li>based on median </li>
+<li>based on quantiles </li>
+<li>based on ge </li>
+</ul></li>
+<li>from multi-category to binary
+
+<ul>
+<li>string values</li>
+<li>numeric values </li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p>Generally speaking, multilayer percepton neural nets are strongest in solving classification problems, where the outcome variable is either binary categorical (0 or 1) or multi categorical. This is why there is strong emphasis in Autonomio on making such transformations available within the train() command. </p>
+<h4 id='binary-default'>BINARY (default)</h4>
+<ul>
+<li>X can be text, int, or floating point </li>
+<li>Y can be an int, or floating point</li>
+</ul>
+
+<p>The default settings are optimized for making a 1 or 0 prediction and for example in the case of predicting sentiment from tweets, Autonomio gives 85% accuracy without any parameter setting for classifying tweets that rank in the most negative 20% according to NLTK Vader sentiment analysis. </p>
+<h4 id='categorical'>CATEGORICAL</h4>
+<ul>
+<li>X can be text, integer </li>
+<li>Y can be an integer or text</li>
+<li>output layer neurons must match number of categories</li>
+<li>change activation_out to something that works with categoricals</li>
+</ul>
+
+<p>It&#39;s not a good idea to have too many categories, maybe 10 is pushing it in most cases. </p>
+<h3 id='train-query-parameters'>Train Query Parameters</h3>
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
+<th>ARGUMENT</th>
+<th>REQUIRED INPUT</th>
+<th>DEFAULT</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
+<td>X</td>
+<td>string, int, float</td>
+<td>NA</td>
 </tr>
 <tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>Y</td>
+<td>int,float,categorical</td>
+<td>NA</td>
+</tr>
+<tr>
+<td>data</td>
+<td>data object</td>
+<td>NA</td>
+</tr>
+<tr>
+<td>epoch</td>
+<td>int</td>
+<td>5</td>
+</tr>
+<tr>
+<td>flatten</td>
+<td>string, float</td>
+<td>&#39;mean&#39;</td>
+</tr>
+<tr>
+<td>dropout</td>
+<td>float</td>
+<td>.2</td>
+</tr>
+<tr>
+<td>layers</td>
+<td>int (2 through 5</td>
+<td>3</td>
+</tr>
+<tr>
+<td>loss</td>
+<td>string [Keras_Losses]_</td>
+<td>&#39;binary_crossentropy&#39;</td>
+</tr>
+<tr>
+<td>save_model</td>
+<td>string</td>
+<td>False</td>
+</tr>
+<tr>
+<td>neuron_first</td>
+<td>int,float,categorical</td>
+<td>300</td>
+</tr>
+<tr>
+<td>neuron_last</td>
+<td>data object</td>
+<td>1</td>
+</tr>
+<tr>
+<td>batch_size</td>
+<td>int</td>
+<td>10</td>
+</tr>
+<tr>
+<td>verbose</td>
+<td>0,1,2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>shape</td>
+<td>string</td>
+<td>&#39;funnel&#39;</td>
+</tr>
+<tr>
+<td>double_check</td>
+<td>True or False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>validation</td>
+<td>True,False,float(0 to 1)</td>
+<td>False</td>
 </tr>
 </tbody></table>
+
+<p><strong>X</strong> = The input can be indicated in several ways::</p>
+
+<p>&#39;label&#39;   = single column label
+[&#39;a&#39;,&#39;b&#39;] = multiple column labels
+[1,12]    = a range of columns
+[1,2,12]  = columns by index
+The data can be multiple dtypes:
+&#39;int&#39;     = any integer values
+&#39;float&#39;   = any float value
+&#39;string&#39;  = raw text or category labels</p>
+
+<p>In case you need to cleanup your data first, you can do it with::</p>
+
+<p>from autonomio.commands import wrangler</p>
+
+<p>wrangler(data,outcome_var)</p>
+
+<p><strong>Y</strong> =  This can be in multiple dtype::</p>
+
+<p>&#39;int&#39;     = any integer values
+&#39;float&#39;   = any float value
+&#39;string&#39;  = category labels</p>
+
+<p>See more related to prediction variable below in the &#39;flatten&#39; section.</p>
+
+<p><strong>data</strong> =  A pandas dataframe where you have at least one column for &#39;x&#39; depedent variable (predictor) and one column for &#39;y&#39; indepedent variable (prediction).</p>
+
+<p><strong>dims</strong> =  This is selected automatically and is not needed to worry about. NOTE: this needs to be same as x features</p>
+
+<p><strong>epoch</strong> = how many epocs will be run for training. More epochs will take more time.</p>
+
+<p><strong>flatten</strong> = For transforming y (outcome) variable. For example if the y input is continuous but prediction is binary, then a flattening of some sort should be used.</p>
+
+<p>OPTIONS:  &#39;mean&#39;,&#39;median&#39;,&#39;mode&#39;, int, float, &#39;cat_string&#39;, &#39;cat_numeric&#39;, and &#39;none&#39;</p>
+
+<p><strong>dropout</strong> = The fraction of learning that will be &quot;forgotten&quot; on each each learning event.</p>
+
+<p><strong>layers</strong> = The number of dense layers the model will have. Note that each dense layer is followed by a dropout layer.</p>
+
+<p><strong>model</strong> = This is currently not in use. Later we add LSTM and some other model options, then it will be activated.</p>
+
+<p><strong>loss</strong> = The loss to be used with the model. All the Keras losses all available https://keras.io/losses/</p>
+
+<p><strong>optimizer</strong> = The optimizer to use with the model. All the Keras optimizers are all available &gt; https://keras.io/optimizers/</p>
+
+<p><strong>activation</strong> = Activation for the hidden layers (non-output) and all the Keras optimizers are all available &gt; https://keras.io/optimizers/</p>
+
+<p><strong>activation_out</strong> = Same as &#39;activation&#39; (above), but for the output layer only.</p>
+
+<p><strong>save_model</strong> =  An option to save the model configuration, weights and parameters.</p>
+
+<p>OPTIONS:  default is &#39;False&#39;, if &#39;True&#39; model will be saved with default name (&#39;model&#39;) and if string, then the model name will be the string value e.g. &#39;titanic&#39;.</p>
+
+<p><strong>neuron_max</strong> = The maximum number of neurons on any layer.</p>
+
+<p><strong>neuron_last</strong> = How many neurons there are in the last layer.</p>
+
+<p><strong>batch_size</strong> = Changes the number of samples that are propagated through the network at one given point in time. The smaller the batch_size, the longer the training will take.</p>
+
+<p><strong>verbose</strong> = This is set to &#39;0&#39; by default. The other options are &#39;1&#39; and &#39;2&#39; and will change the amount of information you are getting.</p>
+
+<p><strong>shape</strong> = Used for automatically creating a network shape. Currently there are 8 options available: &#39;funnel&#39;, &#39;rhombus&#39;, &#39;long_funnel&#39;, &#39;brick&#39;, &#39;hexagon&#39;, &#39;diamond&#39;, &#39;triangle&#39;, &#39;stairs&#39;. Diagram is provided for each in the &#39;Shape&#39; section. </p>
+
+<p><strong>double_check</strong> = Makes a &#39;manual&#39; check of the results provided by Keras backend and compares the two. This is good when you have doubt with the results.</p>
+
+<p><strong>validation</strong> = Validates in a more robust way than usual train/test split by initially splitting the dataset in half, where the first half becomes train and test, and then the second half becomes validation data set. </p>
+
+<p>OPTIONS: default is &#39;false&#39;, with &#39;true&#39; 50% of data is separated for validation.</p>
+<h2 id='predictor'>Predictor</h2>
+<p>Once you&#39;ve trained a model with train(), you can use it easily on any dataset through the predictor() command. You could use it in the Jypyter notebook, have it run on a server as part of some other process, or make it part of a website that does something interesting for the user based on their input. Just to name a few examples. Think of a trained neural net model as what is referred to as AI. It&#39;s far more easier to have AIs doing various tasks than most people think. Especially with Autonomio! </p>
+<pre class="highlight python tab-python"><code><span class="n">predictor</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="s">'model.json'</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Add labels to prections</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="n">test</span><span class="p">(,</span><span class="n">data</span><span class="p">,</span><span class="n">labels</span><span class="o">=</span><span class="s">'handle'</span><span class="p">,</span><span class="s">'model.json'</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Add an interactive scatter plot visualization with an y-axis variable::</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="n">test</span><span class="p">(,</span><span class="n">data</span><span class="p">,</span><span class="s">'handle'</span><span class="p">,</span><span class="s">'model.json'</span><span class="p">,</span><span class="n">y_scatter</span><span class="o">=</span><span class="s">'influence_score'</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>To yield the scatter plot, you have to call it specifically</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="n">test_result</span> <span class="o">=</span> <span class="n">test</span><span class="p">(</span><span class="s">'text'</span><span class="p">,</span><span class="n">data</span><span class="p">,</span><span class="s">'handle'</span><span class="p">,</span><span class="s">'model.json'</span><span class="p">,</span><span class="n">y_scatter</span><span class="o">=</span><span class="s">'influence_score'</span><span class="p">)</span>
+<span class="n">test_result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</code></pre><h3 id='test-query-parameters'>Test Query Parameters</h3>
+<table><thead>
+<tr>
+<th>ARGUMENT</th>
+<th>REQUIRED INPUT</th>
+<th>DEFAULT</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>X</td>
+<td>variable/s in dataframe</td>
+<td>NA</td>
+</tr>
+<tr>
+<td>data</td>
+<td>pandas dataframe</td>
+<td>NA</td>
+</tr>
+<tr>
+<td>labels</td>
+<td>variable/s in dataframe</td>
+<td>NA</td>
+</tr>
+<tr>
+<td>saved_model</td>
+<td>filename</td>
+<td>5</td>
+</tr>
+<tr>
+<td>y_scatter</td>
+<td>variable in dataframe</td>
+<td>&#39;mean&#39;</td>
+</tr>
+</tbody></table>
+<h2 id='wrangler'>Wrangler</h2><h2 id='data'>Data</h2>
+<p>The data() command is provided to allow data ingestion from a variety of formats, and to give the user access to unique deep learning datasets. In addition to allowing access to Autonomio datasets, the function also supports importing from csv, json, and excel. The data importing function is for most cases.</p>
+<pre class="highlight python tab-python"><code><span class="c"># loading 'random_tweets' dataset in to a dataframe</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="p">(</span><span class="s">'random_tweets'</span><span class="p">)</span>
+
+<span class="c"># loading data.csv in to a dataframe</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="p">(</span><span class="s">'data.csv'</span><span class="p">,</span><span class="n">mode</span><span class="o">=</span><span class="s">'file'</span><span class="p">)</span>
+</code></pre><h3 id='supported-formats'>Supported Formats</h3>
+<ul>
+<li>csv </li>
+<li>txt</li>
+<li>json</li>
+<li>msgpack (highly compressed binary format)</li>
+</ul>
+<h3 id='example-datasets'>Example datasets</h3>
+<p>Several unique deep learning focused datasets are provided with Autonomio. These datasets have not been released anywhere else, and relate to current affairs such as Twitter bots, ad fraud, US Election 2016, and party politics. </p>
+
+<ul>
+<li>election_in_twitter</li>
+<li>programmatic_ad_fraund</li>
+<li>parties_and_employment</li>
+<li>tweet_sentiment</li>
+<li>random_tweets</li>
+<li>sites_category_and_vec</li>
+</ul>
+
+<blockquote>
+<p>Dataset consisting of 10 minute samples of 80 million tweets</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="n">data</span><span class="p">(</span><span class="s">'election_in_twitter'</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>4,000 ad funded websites with word vectors and 5 categories</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="n">data</span><span class="p">(</span><span class="s">'sites_category_and_vec'</span><span class="p">)</span>   
+</code></pre>
+<blockquote>
+<p>Data from both buy and sell side and over 10 other sources</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="n">data</span><span class="p">(</span><span class="s">'programmatic_ad_fraud'</span><span class="p">)</span>    
+</code></pre>
+<blockquote>
+<p>9 years of monthly poll and unemployment numbers</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="n">data</span><span class="p">(</span><span class="s">'parties_and_employment'</span><span class="p">)</span>   
+</code></pre>
+<blockquote>
+<p>120,000 tweets with sentiment classification from NLTK</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="n">data</span><span class="p">(</span><span class="s">'tweet_sentiment'</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>20,000 random tweets</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="n">data</span><span class="p">(</span><span class="s">'random_tweets'</span><span class="p">)</span>            
+</code></pre><h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>ARGUMENT</th>
+<th>REQUIRED INPUT</th>
+<th>DEFAULT</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>dataset or filename</td>
+<td>NA</td>
+</tr>
+<tr>
+<td>mode</td>
+<td>string (&#39;file&#39;)</td>
+<td>&#39;default&#39;</td>
+</tr>
+<tr>
+<td>sep</td>
+<td>string e.g &#39;</td>
+<td>&#39;</td>
+</tr>
+<tr>
+<td>delimiter</td>
+<td>string e.g &#39;,&#39;</td>
+<td>None</td>
+</tr>
+<tr>
+<td>header</td>
+<td>string (&#39;file&#39;)</td>
+<td>&#39;infer&#39;</td>
+</tr>
+</tbody></table>
+
+<p><strong>name</strong> = Name of the dataset or file. In the case of file, should be csv/txt for comma etc. separated values, json for json file and msgpack for msgpack. Automation of handling the request will not work unless the filename </p>
+
+<p><strong>mode</strong> = Either &#39;default&#39; which implies one of the Autonomio datasets, or &#39;file&#39; which is for loading a file. </p>
+
+<p><strong>sep</strong> =  By default &#39;,&#39; but can be any string. </p>
+
+<p><strong>delimiter</strong> =  This is used as secondary for separator (sep). Should be string, for example &#39;,&#39; when thousand separators are used.</p>
+
+<p><strong>header</strong> =  Either integer for row number, &#39;None&#39; for no header or default &#39;infer&#39; will automatically decide (takes the top row mostly).</p>
 
 <aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+Most important thing to remember is to be nice and have fun! :) 
 </aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h1 id='examples'>Examples</h1>
+<p>Autonomio is very easy to use and it&#39;s straightforward to memorize the namespace which is just 4 commands and less than 40 arguments combined. Namespace memorization is one of the key differences between advanced and beginner users. Whereas Autonomio helps lower skill level practitioners to dramatically improve their capability, advanced practitioners enjoy significant productivity gains and headache reduction.</p>
+<h2 id='prepare-and-train'>Prepare and Train</h2>
+<p>A typical use-case, even with messy datasets with many columns, involves few lines of code and seconds or minutes of training time on a regular laptop machine.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Medicare Provider Utilization and Payment Data</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
+<pre class="highlight python tab-python"><code>
+<span class="c"># do the python imports </span>
+<span class="kn">from</span> <span class="nn">autonomio.commands</span> <span class="kn">import</span> <span class="n">data</span><span class="p">,</span> <span class="n">wrangler</span><span class="p">,</span> <span class="n">train</span><span class="p">,</span> <span class="n">predictor</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
-</tr>
-</tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<span class="c"># import the data from csv</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="p">(</span><span class="s">'medicare_10k.csv'</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s">'file'</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">wrangler</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="s">'z'</span><span class="p">)</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -X DELETE
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
+<span class="c"># train a neural net</span>
+<span class="n">train</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">17</span><span class="p">],</span><span class="s">'z'</span><span class="p">,</span><span class="n">df</span><span class="p">,</span><span class="n">epoch</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">loss</span><span class="o">=</span><span class="s">'logcosh'</span><span class="p">,</span><span class="n">flatten</span><span class="o">=</span><span class="s">'median'</span><span class="p">)</span>
+</code></pre><h1 id='shapes'>Shapes</h1>
+<p>Shapes are used as part of the train() command, in order to dramatically change the network dimensions and shape with a single parameter. There are two parameters that work together to make up the shape and total neuron count of the neural network. </p>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
+<ul>
+<li>shape</li>
+<li>neuron_max </li>
+</ul>
+
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Examples: </p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
-</tr>
-</tbody></table>
-<h1 id='errors'>Errors</h1>
-<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files...just save them to the `includes` folder and add them to the top of your `index.md`'s frontmatter. Files are included in the order listed.</aside>
+<pre class="highlight python tab-python"><code><span class="c"># produce a long_funnel where the highest neuron per layer is 10 </span>
+<span class="n">train</span><span class="p">(</span><span class="s">'text'</span><span class="p">,</span><span class="s">'neg'</span><span class="p">,</span><span class="n">df</span><span class="p">,</span><span class="n">shape</span><span class="o">=</span><span class="s">'long_funnel'</span><span class="p">,</span><span class="n">neuron_max</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 
-<p>The Kittn API uses the following error codes:</p>
+<span class="c"># produce a brick where the highest neuron per layer is 55 </span>
+<span class="n">train</span><span class="p">(</span><span class="s">'text'</span><span class="p">,</span><span class="s">'neg'</span><span class="p">,</span><span class="n">df</span><span class="p">,</span><span class="n">shape</span><span class="o">=</span><span class="s">'brick'</span><span class="p">,</span><span class="n">neuron_max</span><span class="o">=</span><span class="mi">55</span><span class="p">)</span>
 
-<table><thead>
-<tr>
-<th>Error Code</th>
-<th>Meaning</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>400</td>
-<td>Bad Request -- Your request sucks</td>
-</tr>
-<tr>
-<td>401</td>
-<td>Unauthorized -- Your API key is wrong</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found -- The specified kitten could not be found</td>
-</tr>
-<tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&#39;m a teapot</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
-</tr>
-</tbody></table>
+</code></pre>
+<p>NOTE: Shapes function is called from within the train() and does not serve a meaningful purpose for using separately. The function outputs a list with the neuron counts. </p>
+<h2 id='funnel'>Funnel</h2><pre class="highlight plaintext"><code>\          /
+ \        /
+  \      /
+   \    /
+    |  |
+</code></pre>
+<p>Funnel is the shape, which is set by default. It roughly looks like an upside-dowm pyramind, so that the first layer is defined as neuron_max, and the next layers are sligtly decreased compared to previous ones.</p>
 
+<p>As funnel shape is set by default, we do not need to input anything to use it.</p>
+
+<blockquote>
+<p>Example input (default setting):</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="n">tr</span> <span class="o">=</span> <span class="n">train</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s">'neg'</span><span class="p">,</span><span class="n">temp</span><span class="p">,</span><span class="n">layers</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">neuron_max</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</code></pre>
+<p>For a five layer neural net, this will yield 10, 5, 3, 2, 1 neurons respectively. </p>
+<h2 id='long-funnel'>Long Funnel</h2><pre class="highlight plaintext"><code> |          |
+ |          |
+ |          |
+  \        /
+   \      /
+    \    /
+     |  |
+</code></pre>
+<p>Long Funnel shape can be applied by defining shape as &#39;long_funnel&#39;. First half of the layers have the value of neuron_max, and then they have the shape similar to Funnel shape - decreasing to the last layer.</p>
+
+<blockquote>
+<p>Example input:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="n">tr</span> <span class="o">=</span> <span class="n">train</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s">'neg'</span><span class="p">,</span><span class="n">temp</span><span class="p">,</span><span class="n">layers</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">neuron_max</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</code></pre>
+<p>For a six layer neural net, this will yield 10, 10, 10, 5, 3, 2 neurons respectively. </p>
+<h2 id='rhombus'>Rhombus</h2><pre class="highlight plaintext"><code>     /   \
+    /     \
+   /       \
+  /         \
+  \         /
+   \       /
+    \     /
+     \   /
+     |   |
+</code></pre>
+<p>Rhobmus can be called by definind shape as &#39;rhombus&#39;. The first layer equals to 1 and the next layers slightly increase till the middle one which equals to the value of neuron_max. Next layers are the previous ones goin in the reversed order. </p>
+
+<blockquote>
+<p>Example input:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="n">train</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s">'neg'</span><span class="p">,</span><span class="n">temp</span><span class="p">,</span><span class="n">layers</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">neuron_max</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">shape</span><span class="o">=</span><span class="s">'rhombus'</span><span class="p">)</span>
+</code></pre>
+<p>For a five layer neural net, this will yield 1, 6, 10, 6, 1 neurons respectively. </p>
+<h2 id='diamond'>Diamond</h2><pre class="highlight plaintext"><code>   /       \
+  /         \
+  \         /
+   \       /
+    \     /
+     \   /
+     |   |
+</code></pre>
+<p>Defining shape as &#39;diamond&#39; we will obtain the shape of the &#39;opened rhombus&#39;, where everything is similar to the Rhombus shape, but layers start from the larger number instead of 1. </p>
+
+<blockquote>
+<p>Example input: </p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="n">train</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s">'neg'</span><span class="p">,</span><span class="n">temp</span><span class="p">,</span><span class="n">layers</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span><span class="n">neuron_max</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">shape</span><span class="o">=</span><span class="s">'diamond'</span><span class="p">)</span>
+</code></pre>
+<p>For a six layer neural net, this will yield 6, 6, 10, 5, 3, 2 neurons respectively. </p>
+<h2 id='hexagon'>Hexagon</h2><pre class="highlight plaintext"><code>    /    \
+   /      \
+  /        \
+ |          |
+ |          |
+ |          |
+  \        /
+   \      /
+    \    /
+     |  |
+</code></pre>
+<p>Hexagon, which we get by calling &#39;hexagon&#39; for shape, starts with 1 as the first layer and increases till the neuron_max value. Then some next layers will have maximum value untill it starts to decrease till the last layer. </p>
+
+<blockquote>
+<p>Example input:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="n">train</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s">'neg'</span><span class="p">,</span><span class="n">temp</span><span class="p">,</span><span class="n">layers</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span><span class="n">neuron_max</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">shape</span><span class="o">=</span><span class="s">'hexagon'</span><span class="p">)</span>
+</code></pre>
+<p>Output list of neurons(excluding ounput layer). </p>
+
+<p>For a seven layer neural net, this will yield 1, 3, 5, 10, 10, 5, 3 neurons respectively.</p>
+<h2 id='brick'>Brick</h2><pre class="highlight plaintext"><code>   |             |
+   |             |
+   |             |
+   |             |
+    ----     ----
+        |   |
+
+</code></pre>
+<p>All the layers have neuron_max value. Called by shape=&#39;brick&#39;. </p>
+
+<blockquote>
+<p>Example input:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code>    <span class="n">tr</span> <span class="o">=</span> <span class="n">train</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s">'neg'</span><span class="p">,</span><span class="n">temp</span><span class="p">,</span><span class="n">layers</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">neuron_max</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">shape</span><span class="o">=</span><span class="s">'brick'</span><span class="p">)</span>
+</code></pre>
+<p>Output list of neurons(excluding ounput layer). </p>
+
+<p>For a five layer neural net, this will yield 10, 10, 10, 10, 10 neurons respectively.</p>
+<h2 id='triangle'>Triangle</h2><pre class="highlight plaintext"><code>        /    \
+       /      \
+      /        \
+     /          \
+    /            \
+    ----      ----
+        |    |
+</code></pre>
+<p>This shape, which is called by defining shape as &#39;triangle&#39; starts with 1 and increases till the last input layer, which is neuron_max. </p>
+
+<blockquote>
+<p>Example input: </p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="n">train</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s">'neg'</span><span class="p">,</span><span class="n">temp</span><span class="p">,</span><span class="n">layers</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">neuron_max</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">shape</span><span class="o">=</span><span class="s">'triangle'</span><span class="p">)</span>
+</code></pre>
+<p>Output list of neurons(excluding ounput layer). </p>
+
+<p>For a five layer neural net, this will yield 1, 2, 3, 5, 10 neurons respectively.</p>
+<h2 id='stairs'>Stairs</h2><pre class="highlight plaintext"><code>   |                      |
+    ---                ---
+       |             |
+        ---       ---
+           |     |
+</code></pre>
+<p>You can apply it defining shape as &#39;stairs&#39;. If number of layers more than four, then each two layers will have the same value, then it decreases.If the number of layers is smaller than four, then the value decreases every single layer. </p>
+
+<blockquote>
+<p>Example input: </p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="n">train</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s">'neg'</span><span class="p">,</span><span class="n">temp</span><span class="p">,</span><span class="n">layers</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span><span class="n">neuron_max</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">shape</span><span class="o">=</span><span class="s">'stairs'</span><span class="p">)</span>
+</code></pre>
+<p>For a six layer neural net, this will yield 10, 10, 8, 8, 6, 6 neurons respectively.</p>
+<h1 id='language-processing'>Language Processing</h1><h2 id='unstructed-data'>Unstructed Data</h2><h2 id='word-vectorization'>Word Vectorization</h2>
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
                 <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
           </div>
       </div>
     </div>
