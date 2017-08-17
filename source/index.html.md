@@ -57,12 +57,19 @@ The simplest way is to get the latest well tested version is to install with pip
 <code>pip install git+https://github.com/autonomio/core-module.git</code>
 
 
-# Training aNeural Network
+# Models
 
-> A typical use of the training function for - you guessed it - training a neural network. 
+> A typical use of the training function for - you guessed it - training a neural networks. Currently there are two categories of models you can choose from: 
+
+- MLP 
+- Regression
+    - Linear
+    - Logistic
+    - Regularized
+
+> Training an MLP model
 
 ```python
-
 train([1,25],'Survived',df,
                         flatten='none',
                         epoch=250,
@@ -74,8 +81,13 @@ train([1,25],'Survived',df,
                         shape=shape,
                         verbose=0)
 ```
+> Training a Regression model
 
-Autonomio provides a very high level abstraction layer to Multilayer Percepton Neural Network with comprehensive customization of neural net from a single line command. 
+```python
+train([1,25],'Survived',epochs=1000,'linear')
+```
+
+Autonomio provides a very high level abstraction layer to neural nets from a single line command. 
 
 # Commands 
 
