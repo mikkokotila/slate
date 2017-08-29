@@ -23,5 +23,8 @@ df = wrangler(df,'z')
 train([2,17],'z',df,epoch=20,loss='logcosh',flatten='median')
 ```
 
+<aside class="success">
+See more examples throughout this user documentation. 
+</aside>
 
 
