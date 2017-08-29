@@ -228,7 +228,7 @@
             <a href="#installation" class="toc-h1 toc-link" data-title="Installation">Installation</a>
           </li>
           <li>
-            <a href="#training-aneural-network" class="toc-h1 toc-link" data-title="Training aNeural Network">Training aNeural Network</a>
+            <a href="#training-neural-network" class="toc-h1 toc-link" data-title="Training Neural Network">Training Neural Network</a>
           </li>
           <li>
             <a href="#commands" class="toc-h1 toc-link" data-title="Commands">Commands</a>
@@ -241,6 +241,9 @@
                   </li>
                   <li>
                     <a href="#wrangler" class="toc-h2 toc-link" data-title="Commands">Wrangler</a>
+                  </li>
+                  <li>
+                    <a href="#hyperscan" class="toc-h2 toc-link" data-title="Commands">Hyperscan</a>
                   </li>
                   <li>
                     <a href="#data" class="toc-h2 toc-link" data-title="Commands">Data</a>
@@ -291,7 +294,10 @@
                     <a href="#unstructed-data" class="toc-h2 toc-link" data-title="Language Processing">Unstructed Data</a>
                   </li>
                   <li>
-                    <a href="#word-vectorization" class="toc-h2 toc-link" data-title="Language Processing">Word Vectorization</a>
+                    <a href="#language-support" class="toc-h2 toc-link" data-title="Language Processing">Language support</a>
+                  </li>
+                  <li>
+                    <a href="#adding-new-languages" class="toc-h2 toc-link" data-title="Language Processing">Adding new languages</a>
                   </li>
               </ul>
           </li>
@@ -339,7 +345,7 @@ You must replace <code>medicare_10k.csv</code> with your own dataset.
 <p>The simplest way is to get the latest well tested version is to install with pip from the repo directly. This way you get the latest well tested version, with the latest features. </p>
 
 <p><code>pip install git+https://github.com/autonomio/core-module.git</code></p>
-<h1 id='training-aneural-network'>Training aNeural Network</h1>
+<h1 id='training-neural-network'>Training Neural Network</h1>
 <blockquote>
 <p>A typical use of the training function for - you guessed it - training a neural network. </p>
 </blockquote>
@@ -355,7 +361,15 @@ You must replace <code>medicare_10k.csv</code> with your own dataset.
                         <span class="n">shape</span><span class="o">=</span><span class="n">shape</span><span class="p">,</span>
                         <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </code></pre>
-<p>Autonomio provides a very high level abstraction layer to Multilayer Percepton Neural Network with comprehensive customization of neural net from a single line command. </p>
+<p>Autonomio provides a very high level abstraction layer to several deep learning models:</p>
+
+<ul>
+<li>Multi Layer Perceptors (MLP)</li>
+<li>LSTM</li>
+<li>Regression</li>
+</ul>
+
+<p>These are all accessed through the train() command. </p>
 <h1 id='commands'>Commands</h1><h2 id='train'>Train</h2>
 <ul>
 <li>loss</li>
@@ -599,9 +613,7 @@ The data can be multiple dtypes:
 <p><strong>validation</strong> = Validates in a more robust way than usual train/test split by initially splitting the dataset in half, where the first half becomes train and test, and then the second half becomes validation data set. </p>
 
 <p>OPTIONS: default is &#39;false&#39;, with &#39;true&#39; 50% of data is separated for validation.</p>
-<h2 id='predictor'>Predictor</h2>
-<p>Once you&#39;ve trained a model with train(), you can use it easily on any dataset through the predictor() command. You could use it in the Jypyter notebook, have it run on a server as part of some other process, or make it part of a website that does something interesting for the user based on their input. Just to name a few examples. Think of a trained neural net model as what is referred to as AI. It&#39;s far more easier to have AIs doing various tasks than most people think. Especially with Autonomio! </p>
-<pre class="highlight python tab-python"><code><span class="n">predictor</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="s">'model.json'</span><span class="p">)</span>
+<h2 id='predictor'>Predictor</h2><pre class="highlight python tab-python"><code><span class="n">predictor</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="s">'model.json'</span><span class="p">)</span>
 </code></pre>
 <blockquote>
 <p>Add labels to prections</p>
@@ -618,7 +630,9 @@ The data can be multiple dtypes:
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="n">test_result</span> <span class="o">=</span> <span class="n">test</span><span class="p">(</span><span class="s">'text'</span><span class="p">,</span><span class="n">data</span><span class="p">,</span><span class="s">'handle'</span><span class="p">,</span><span class="s">'model.json'</span><span class="p">,</span><span class="n">y_scatter</span><span class="o">=</span><span class="s">'influence_score'</span><span class="p">)</span>
 <span class="n">test_result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-</code></pre><h3 id='test-query-parameters'>Test Query Parameters</h3>
+</code></pre>
+<p>Once you&#39;ve trained a model with train(), you can use it easily on any dataset through the predictor() command. You could use it in the Jypyter notebook, have it run on a server as part of some other process, or make it part of a website that does something interesting for the user based on their input. Just to name a few examples. Think of a trained neural net model as what is referred to as AI. It&#39;s far more easier to have AIs doing various tasks than most people think.  </p>
+<h3 id='test-query-parameters'>Test Query Parameters</h3>
 <table><thead>
 <tr>
 <th>ARGUMENT</th>
@@ -652,7 +666,244 @@ The data can be multiple dtypes:
 <td>&#39;mean&#39;</td>
 </tr>
 </tbody></table>
-<h2 id='wrangler'>Wrangler</h2><h2 id='data'>Data</h2>
+<h2 id='wrangler'>Wrangler</h2>
+<p>The wrangler() function introduces &quot;best-of-class&quot; data ingestion capability for maximum convinience of single file preparation. If you have to work with multiple files, handle each file separately and then merge afterwards. Based on the parameter configuration, wrangler() yields a dataframe where one or more of the following may be true: </p>
+<pre class="highlight python tab-python"><code>
+<span class="kn">from</span> <span class="nn">autonomio.commands</span> <span class="kn">import</span> <span class="n">data</span><span class="p">,</span> <span class="n">wrangler</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="p">(</span><span class="s">'train.csv'</span><span class="p">,</span><span class="s">'file'</span><span class="p">)</span>
+<span class="n">titanic</span> <span class="o">=</span> <span class="n">wrangler</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="s">'Survived'</span><span class="p">,</span><span class="n">starts_with_col</span><span class="o">=</span><span class="s">'Cabin'</span><span class="p">,</span><span class="n">first_fill_cols</span><span class="o">=</span><span class="s">'Cabin'</span><span class="p">)</span>
+
+</code></pre>
+<blockquote>
+<p>NOTE: Typical kernel examples on Kaggle show that the same dataset require data scientist 30 to 100 lines of code in order to get to the exactly same result we get to here with a single wrangler() command. </p>
+</blockquote>
+
+<ul>
+<li>columns are dropped entirely</li>
+<li>rows are dropped</li>
+<li>unstructured columns are transformed in to categories</li>
+<li>unstructured columns are transformed in to word vectors (floats)</li>
+<li>NaN values are filled</li>
+</ul>
+
+<p><strong>data</strong> = A pandas dataframe that needs to be transformed. </p>
+
+<p><strong>y</strong> = The feature that will be moved as the first column in the dataframe and will not be transformed in anyway. </p>
+
+<p><strong>max_categories</strong> = Accepts an integer value. In columns with string values (automatically detected), if there are more unique values than &#39;max_categories&#39;, then the column will be not categorized and will be dropped instead. Such column could be treated with &#39;vectorize&#39; parameter instead. </p>
+
+<p><strong>starts_with_col</strong> = Accepts a string value. For cases where a column of string values want to be transformed in to categories based on a shared first character in the string. </p>
+
+<p><strong>treshold</strong> = Accepts a floating point value (or 1). Sets the limit at which point a column will be entirely dropped because of two many NaN values. For example .6 means that if more than 60% of column&#39;s values are NaN, the whole column will be dropped. </p>
+
+<p><strong>first_fill_colls</strong> = Access a column name as value. For cases where a given column NaN values are filled first, so that it will not be dropped if it does not meet the &#39;treshold&#39; parameter. This is for cases where some columns want to be retained even they have a high number of NaN values. </p>
+
+<p><strong>fill_with</strong> = A string, integer or float value. The value that is used for filling NaNs. </p>
+
+<p><strong>to_string</strong> = A column name. For the case where a given column may be needed later as a string value, for example a name to be connected with prediction values later. </p>
+
+<p><strong>vectorize</strong> = A column name. Vectorizes the text inputs in to 300 features, each representing a value in the word2vec vector. </p>
+
+<table><thead>
+<tr>
+<th>ARGUMENT</th>
+<th>REQUIRED INPUT</th>
+<th>DEFAULT</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>data</td>
+<td>pandas dataframe</td>
+<td>NA</td>
+</tr>
+<tr>
+<td>y</td>
+<td>the outcome variable</td>
+<td>NA</td>
+</tr>
+<tr>
+<td>max_categories</td>
+<td>max number of unique categories</td>
+<td>&#39;auto&#39;</td>
+</tr>
+<tr>
+<td>starts_with_col</td>
+<td>a column in the dataframe</td>
+<td>NA</td>
+</tr>
+<tr>
+<td>treshold</td>
+<td>a % treshold of NaN values for dropping whole column</td>
+<td>.9</td>
+</tr>
+<tr>
+<td>first_fill_cols</td>
+<td>a column in the dataframe</td>
+<td>NA</td>
+</tr>
+<tr>
+<td>fill_with</td>
+<td>a string, integer or float value</td>
+<td>0</td>
+</tr>
+<tr>
+<td>to_string</td>
+<td>a column in the dataframe</td>
+<td>NA</td>
+</tr>
+<tr>
+<td>vectorize</td>
+<td>a column in the dataframe with string values*</td>
+<td>NA</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+* Vectorization could be done to numbers as well, but is not the intended usecase.
+</aside>
+<h2 id='hyperscan'>Hyperscan</h2>
+<p>The hyperscan() function is for scanning through hyperparameter configurations automatically or based on set ranges / lists. Starting a scan is as easy as it would be to run the train() command but instead of trainining a model with a single set of parameters, it does it with multiple configurations. For detailed overview of the parameters, see the section for <a href="#train">train()</a>. The below section will provide an overview of the parameters that are unique to hyperscan(). </p>
+<pre class="highlight python tab-python"><code>
+<span class="n">result</span> <span class="o">=</span> <span class="n">hyperscan</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">],</span> 
+                   <span class="s">'i'</span><span class="p">,</span> 
+                   <span class="n">diabetes</span><span class="p">,</span>
+                   <span class="n">epochs</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span>
+                   <span class="n">dropout</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                   <span class="n">scan_mode</span><span class="o">=</span><span class="s">'selective'</span><span class="p">,</span> 
+                   <span class="n">losses</span><span class="o">=</span><span class="s">'logcosh'</span><span class="p">,</span>
+                   <span class="n">shapes</span><span class="o">=</span><span class="p">[</span><span class="s">'brick'</span><span class="p">,</span><span class="s">'long_funnel'</span><span class="p">],</span> 
+                   <span class="n">optimizers</span><span class="o">=</span><span class="s">'rmsprop'</span><span class="p">,</span>
+                   <span class="n">activations</span><span class="o">=</span><span class="s">'softsign'</span><span class="p">,</span>
+                   <span class="n">layers</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span>
+                   <span class="n">batch_sizes</span><span class="o">=</span><span class="p">[</span><span class="mi">14</span><span class="p">,</span><span class="mi">20</span><span class="p">])</span>
+
+</code></pre>
+<blockquote>
+<p>NOTE: Hyperscan is not a solution for optimization of hyperparameters, but a way to automate the most mindless part of model configuration. Currently there are six options for parameters to be scanned:</p>
+</blockquote>
+
+<ul>
+<li>number of layers</li>
+<li>shape of the NN</li>
+<li>batch_size</li>
+<li>activation</li>
+<li>optimizer</li>
+<li>loss</li>
+</ul>
+
+<p>Each can be scanned in three modes: </p>
+
+<ul>
+<li>single value</li>
+<li>a list of values</li>
+<li>all values (&#39;auto&#39;)</li>
+</ul>
+
+<p>In addition &#39;batch_size&#39; and &#39;layers&#39; also support: </p>
+
+<ul>
+<li>a range of values</li>
+<li>a stepped range of values </li>
+</ul>
+
+<p>For full reference, see the section for <a href="#train">train()</a> parameters. </p>
+
+<p><strong>batch_size_step</strong> = An integer. The number of values skipped, for example in a range of 2 to 20, &#39;batch_size_step&#39; value 2 will skip 3,5,7,9...and so on.  </p>
+
+<p><strong>layers_step</strong> = Same as &#39;batch_size_step&#39; above but for layers. </p>
+
+<p><strong>scan_mode</strong> = If set on auto, all possible options will be scanned through. Note that this will take time, even with a powerful machine. In most cases it&#39;s better to use &#39;selective&#39; with reasonable preset values in lists. </p>
+
+<table><thead>
+<tr>
+<th>ARGUMENT</th>
+<th>REQUIRED INPUT</th>
+<th>DEFAULT</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>x</td>
+<td>pandas dataframe</td>
+<td>NA</td>
+</tr>
+<tr>
+<td>y</td>
+<td>the outcome variable</td>
+<td>NA</td>
+</tr>
+<tr>
+<td>data</td>
+<td>max number of unique categories</td>
+<td>NA</td>
+</tr>
+<tr>
+<td>flatten</td>
+<td>a column in the dataframe</td>
+<td>&#39;none&#39;</td>
+</tr>
+<tr>
+<td>dropout</td>
+<td>an float</td>
+<td>0</td>
+</tr>
+<tr>
+<td>batch_sizes</td>
+<td>a integer</td>
+<td>15</td>
+</tr>
+<tr>
+<td>batch_sizes_step</td>
+<td>an integer</td>
+<td>1</td>
+</tr>
+<tr>
+<td>layers</td>
+<td>an integer</td>
+<td>5</td>
+</tr>
+<tr>
+<td>layers_step</td>
+<td>an integer</td>
+<td>1</td>
+</tr>
+<tr>
+<td>activation_out</td>
+<td>single, list or &#39;auto&#39;</td>
+<td>&#39;sigmoid&#39;</td>
+</tr>
+<tr>
+<td>neuron_max</td>
+<td>an integer</td>
+<td>&#39;auto&#39;</td>
+</tr>
+<tr>
+<td>scan_mode</td>
+<td>&#39;selective&#39; or &#39;auto&#39;</td>
+<td>&#39;auto&#39;</td>
+</tr>
+<tr>
+<td>losses</td>
+<td>single, list or &#39;auto&#39;</td>
+<td>&#39;auto&#39;</td>
+</tr>
+<tr>
+<td>optimizers</td>
+<td>single, list or &#39;auto&#39;</td>
+<td>&#39;auto&#39;</td>
+</tr>
+<tr>
+<td>activations</td>
+<td>single, list or &#39;auto&#39;</td>
+<td>&#39;auto&#39;</td>
+</tr>
+<tr>
+<td>shapes</td>
+<td>single, list or &#39;auto&#39;</td>
+<td>&#39;auto&#39;</td>
+</tr>
+</tbody></table>
+<h2 id='data'>Data</h2>
 <p>The data() command is provided to allow data ingestion from a variety of formats, and to give the user access to unique deep learning datasets. In addition to allowing access to Autonomio datasets, the function also supports importing from csv, json, and excel. The data importing function is for most cases.</p>
 <pre class="highlight python tab-python"><code><span class="c"># loading 'random_tweets' dataset in to a dataframe</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="p">(</span><span class="s">'random_tweets'</span><span class="p">)</span>
@@ -775,7 +1026,11 @@ Most important thing to remember is to be nice and have fun! :)
 
 <span class="c"># train a neural net</span>
 <span class="n">train</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">17</span><span class="p">],</span><span class="s">'z'</span><span class="p">,</span><span class="n">df</span><span class="p">,</span><span class="n">epoch</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">loss</span><span class="o">=</span><span class="s">'logcosh'</span><span class="p">,</span><span class="n">flatten</span><span class="o">=</span><span class="s">'median'</span><span class="p">)</span>
-</code></pre><h1 id='shapes'>Shapes</h1>
+</code></pre>
+<aside class="success">
+See more examples throughout this user documentation. 
+</aside>
+<h1 id='shapes'>Shapes</h1>
 <p>Shapes are used as part of the train() command, in order to dramatically change the network dimensions and shape with a single parameter. There are two parameters that work together to make up the shape and total neuron count of the neural network. </p>
 
 <ul>
@@ -931,7 +1186,42 @@ Most important thing to remember is to be nice and have fun! :)
 <pre class="highlight python tab-python"><code><span class="n">train</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s">'neg'</span><span class="p">,</span><span class="n">temp</span><span class="p">,</span><span class="n">layers</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span><span class="n">neuron_max</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">shape</span><span class="o">=</span><span class="s">'stairs'</span><span class="p">)</span>
 </code></pre>
 <p>For a six layer neural net, this will yield 10, 10, 8, 8, 6, 6 neurons respectively.</p>
-<h1 id='language-processing'>Language Processing</h1><h2 id='unstructed-data'>Unstructed Data</h2><h2 id='word-vectorization'>Word Vectorization</h2>
+<h1 id='language-processing'>Language Processing</h1><h2 id='unstructed-data'>Unstructed Data</h2>
+<p>By some estimates, more than 90% of meaningful data is unstructured. Ingestion of unstructured data with Autonomio could not be easier; inputting unstructured data as &#39;x&#39; is handled automatically whereas the input is converted in to word2vec word vectors. The way this works is roughly:</p>
+
+<p>1) detect if a single column of x features is text
+2) use spaCy NLP to vectorize the text 
+3) create 300 invididual features/columns from the vector
+4) use the 300 features as signals for training the model </p>
+
+<p>In addition to doing this automatically with train() having a single x column with text, when one or more columns of text needs to be vectorized as part of a dataset with other features, this can be done easily by using the &#39;vectorize&#39; parameter in train().</p>
+
+<p>Also the wrangler() data preparation function can be used to vectorize unstructured features (e.g. tweets or names).</p>
+<h2 id='language-support'>Language support</h2>
+<p>Autonomio&#39;s vectorizing engine spaCy supports currently 13 languages: </p>
+
+<ul>
+<li>English</li>
+<li>German</li>
+<li>Chinese</li>
+<li>Spanish</li>
+<li>Italian</li>
+<li>French</li>
+<li>Portuguese</li>
+<li>Dutch</li>
+<li>Swedish</li>
+<li>Finnish</li>
+<li>Hungarian</li>
+<li>Bengali</li>
+<li>Hebrew</li>
+</ul>
+
+<p>NOTE: the spacy language libraries have to be downloaded each separately.</p>
+
+<p><a href="https://spacy.io/docs/api/language-models">Read spaCy&#39;s language page</a></p>
+<h2 id='adding-new-languages'>Adding new languages</h2>
+<p>spaCy makes it reletively streamlined to create support for any language and the challenge can (and should be) approached iteratively. </p>
+
       </div>
       <div class="dark-box">
           <div class="lang-selector">
